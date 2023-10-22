@@ -1,0 +1,28 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "nome": "Tarefa 1",
+      "cpf": "413.293.570-19",
+      "responsavel": "admin",
+      "prazo": "2023-12-22",
+      "status": "Liberado para Execução"
+    },
+    {
+      "id": 2,
+      "nome": "Tarefa 2",
+      "cpf": "942.444.790-66",
+      "responsavel": "Tech Lead",
+      "prazo": "2023-10-22",
+      "status": "Em Execução"
+    },
+    {
+      "id": 3,
+      "nome": "Tarefa 4",
+      "cpf": "515.586.430-52",
+      "responsavel": "admin",
+      "prazo": "2023-10-22",
+      "status": "Em Execução"
+    }
+  ]
+}

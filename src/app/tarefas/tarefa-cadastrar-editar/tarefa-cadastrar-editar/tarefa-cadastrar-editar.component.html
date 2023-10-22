@@ -1,0 +1,48 @@
+<mat-toolbar>{{(item && item.id)?'Editar Tarefa':'Cadastrar Tarefa'}}</mat-toolbar>
+
+<div class="componente-container">
+    <form class="form-padrao" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()"
+        novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="nome" required autocomplete="off">
+            <mat-error>Campo é obrigatório</mat-error>
+        </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="CPF" formControlName="cpf" required autocomplete="off">
+        <mat-error>Campo é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Responsável" formControlName="responsavel" required autocomplete="off">
+        <mat-error>Campo é obrigatório</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Prazo" type="date" formControlName="prazo" required autocomplete="off">
+        <mat-error>Campo é obrigatório</mat-error>
+      </mat-form-field>
+<!--      <mat-form-field appearance="fill">-->
+<!--        <mat-label>Choose a date</mat-label>-->
+<!--        <input matInput [matDatepicker]="picker" formControlName="prazo">-->
+<!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field>-->
+<!--        <input matInput placeholder="Status" formControlName="status" required autocomplete="off">-->
+<!--        <mat-error>Campo é obrigatório</mat-error>-->
+<!--      </mat-form-field>-->
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <select matNativeControl required formControlName="status">
+          <option value="Liberado para Execução">Liberado para Execução</option>
+          <option value="Em Execução">Em Execução</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Finalizado">Finalizado</option>
+        </select>
+        <mat-error>Campo é obrigatório</mat-error>
+      </mat-form-field>
+        <div class="linha-botoes">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button *ngIf="item && item.id" type="button" color="warn" mat-raised-button (click)="deletar()">Deletar</button>
+            <button type="button" mat-raised-button routerLink="/tarefas">Cancelar</button>
+        </div>
+    </form>
+</div>
